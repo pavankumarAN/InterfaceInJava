@@ -1,11 +1,11 @@
 package com.athyamsha.interfaceinjava;
 
 public interface Fighting {
-    void throwJab();
+    String throwJab();
 
-    void throwCross();
+    String throwCross();
 
-    void throwHook();
+    String throwHook();
 
-    void throwUpperCut();
+    String throwUpperCut();
 }

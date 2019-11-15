@@ -2,22 +2,22 @@ package com.athyamsha.interfaceinjava;
 
 public class Boxer implements Fighting {
     @Override
-    public void throwJab() {
-        
+    public String throwJab() {
+        return "Box Jab";
     }
 
     @Override
-    public void throwCross() {
-
+    public String throwCross() {
+        return "Box Cross";
     }
 
     @Override
-    public void throwHook() {
-
+    public String throwHook() {
+        return "box Hook";
     }
 
     @Override
-    public void throwUpperCut() {
-
+    public String throwUpperCut() {
+        return "Box UpperCut";
     }
 }
