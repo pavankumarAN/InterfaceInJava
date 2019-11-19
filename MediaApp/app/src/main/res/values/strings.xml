@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MediaApp</string>
+    <string name="hai_world">Hai World!</string>
+    <string name="professional_android_developer">Professional Android Developer.</string>
 </resources>
