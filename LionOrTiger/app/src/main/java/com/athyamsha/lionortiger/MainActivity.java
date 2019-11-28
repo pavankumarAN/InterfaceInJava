@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     enum Player {
-        ONE, TWO;
+        ONE, TWO, No
     }
 
 
@@ -24,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        playerChoices[0] = Player.No;
+        playerChoices[1] = Player.No;
+        playerChoices[2] = Player.No;
+        playerChoices[3] = Player.No;
+        playerChoices[4] = Player.No;
+        playerChoices[5] = Player.No;
+        playerChoices[6] = Player.No;
+        playerChoices[7] = Player.No;
+        playerChoices[8] = Player.No;
     }
 
     public void imgViewTapped(View imageView) {
@@ -41,5 +50,17 @@ public class MainActivity extends AppCompatActivity {
         }
         tappedImageView.animate().translationXBy(2000).alpha(1).rotation(3600).setDuration(2000);
         Toast.makeText(this, tappedImageView.getTag().toString(), Toast.LENGTH_SHORT).show();
+
+        for (int[] winnerColumns : winnerRowsColumns) {
+            if (playerChoices[winnerColumns[0]] == playerChoices[winnerColumns[1]]
+                    && playerChoices[winnerColumns[1]] == playerChoices[winnerColumns[2]]
+                    && playerChoices[winnerColumns[0]] != Player.No) {
+                if (currentPlayer == Player.ONE) {
+                    Toast.makeText(this, "Winner is player two", Toast.LENGTH_LONG).show();
+                }else if(currentPlayer == Player.TWO) {
+                    Toast.makeText(this, "Winner is player one", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 }
